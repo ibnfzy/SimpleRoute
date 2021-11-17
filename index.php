@@ -8,6 +8,7 @@ $route = array(
     '/' => './dashboard.php'
 );
 
+//cek url
 for($i=0;$i<=count($route);$i++){
     if(array_key_exists($path, $route[$path])){
         require_once($route[$path]);
