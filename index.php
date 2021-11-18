@@ -2,6 +2,7 @@
 error_reporting(0);
 
 //rute halaman
+$path = $_SERVER['REQUEST_URL'];
 $route = array(
     '/dashboard' => './dashboard.php',
     '/about' => './about.php',
