@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 
-//rute halaman
+//rute halaman '/link' => './filepath.php' 
 $path = $_SERVER['PATH_INFO'];
 $route = array(
     '/dashboard' => './dashboard.php',
