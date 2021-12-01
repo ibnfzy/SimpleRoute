@@ -1,17 +1,21 @@
 <?php
 error_reporting(0);
 
-//rute halaman '/link' => './filepath.php' 
-$path = $_SERVER['PATH_INFO'];
-$route = array(
-    '/dashboard' => './dashboard.php',
-    '/about' => './about.php',
-    '/' => './dashboard.php'
-);
+$request = $_SERVER['REQUEST_URI']; //hapus /SimpleROute jika dijalankan pada domain seperti www.example.com 
 
-//cek url
-if(array_key_exists($path, $route)){
-        require_once($route[$path]);
-    }else{
-        require_once('./404.php');
-    }
+switch ($request) {
+    case '/SimpleRoute/about' :
+        require __DIR__ . '/views/about.php';
+        break;
+    case '/SimpleRoute':
+    case '/SimpleRoute/' :
+        require __DIR__ . '/views/index.php';
+        break;
+    case '/SimpleRoute/dashboard' :
+        require __DIR__ . '/views/dashboard.php';
+        break;
+    default:
+        http_response_code(404);
+        require __DIR__ . '/views/404.php';
+        break;
+}
