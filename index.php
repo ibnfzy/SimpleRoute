@@ -3,7 +3,7 @@ error_reporting(0);
 
 $request = $_SERVER['REQUEST_URI']; 
 switch ($request) {
-    case '/about' :
+    case '/about' > -1 : //get method pada about page
         require __DIR__ . '/views/about.php';
         break;
     case '':

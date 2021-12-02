@@ -10,7 +10,7 @@
 
 <body>
     <h5>Dashboard</h5>
-    <?php var_dump($_SERVER['REQUEST_URL']); ?>
+    <?php var_dump($_SERVER['REQUEST_URI']); ?>
 </body>
 
 </html>
