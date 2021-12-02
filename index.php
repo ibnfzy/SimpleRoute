@@ -1,17 +1,16 @@
 <?php
 error_reporting(0);
 
-$request = $_SERVER['REQUEST_URI']; //hapus /SimpleROute jika dijalankan pada domain seperti www.example.com 
-
+$request = $_SERVER['REQUEST_URI']; 
 switch ($request) {
-    case '/SimpleRoute/about' :
+    case '/about' :
         require __DIR__ . '/views/about.php';
         break;
-    case '/SimpleRoute':
-    case '/SimpleRoute/' :
+    case '':
+    case '/' :
         require __DIR__ . '/views/index.php';
         break;
-    case '/SimpleRoute/dashboard' :
+    case '/dashboard' :
         require __DIR__ . '/views/dashboard.php';
         break;
     default:
